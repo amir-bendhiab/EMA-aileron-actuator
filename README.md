@@ -27,7 +27,8 @@ Modèle de charge aérodynamique	T_aero = k·θ (k nominal = 11,73 N·m/deg)
  Phase 7 — Documentation finale (en cours)
 🔧 Détail des phases
 Phases 1-2 — CAO & Modélisation
-<!-- Ajoutez ici une capture SolidWorks et/ou du schéma-bloc Simscape -->
+<img width="858" height="694" alt="Capture d&#39;écran 2026-09-02 200703" src="https://github.com/user-attachments/assets/e4ed4dd6-00cb-41c3-b080-93502ae880c1" />
+
 
 Conception mécanique complète sous SolidWorks, puis modélisation électromécanique du système sous Simscape (MATLAB/Simulink) pour disposer d'un modèle dynamique fidèle avant de synthétiser la commande.
 
@@ -39,6 +40,7 @@ Après validation de la commande en simulation (Phase 4), retour sur la CAO pour
 La chaîne cinématique complète a été reconstruite et validée dans SolidWorks avec les liaisons mécaniques appropriées : liaison Pignon (couplage rigide réducteur → vis à billes via l'accouplement) et liaison Vis (conversion rotation → translation, pas de 5mm) pour la vis à billes. Une seconde liaison d'angle, en marge de sécurité, protège le bras de levier contre les configurations géométriques non réalistes (le bras combinant rotation et translation, sans butée physique propre dans la réalité).
 
 Phase 3 — Commande
+<img width="1207" height="740" alt="Capture d&#39;écran 2026-09-02 201233" src="https://github.com/user-attachments/assets/a8671538-ebc1-453d-b92b-7942ffd4f40c" />
 
 Architecture de commande en cascade à trois boucles imbriquées : courant → vitesse → angle, chacune réglée successivement de l'intérieur vers l'extérieur.
 
@@ -47,7 +49,9 @@ Phase 4 — Validation en simulation
 Tests par échelons (+25° / −15°) face à un modèle de charge aérodynamique. Un point notable du processus : la limitation de courant initiale (±5A) empêchait l'actionneur d'atteindre l'angle cible en butée de saturation — corrigée à ±12A après vérification du courant nominal réel du moteur. Un test de robustesse complémentaire (doublement de la raideur de charge aérodynamique k) a confirmé la tenue du système face à une charge plus sévère que le cas nominal.
 
 Phase 5 — Électronique (schéma + PCB)
-<!-- Ajoutez ici une capture du schéma KiCad et/ou du rendu 3D du PCB -->
+<img width="1120" height="749" alt="Capture d&#39;écran 2026-09-02 200900" src="https://github.com/user-attachments/assets/26520fb2-c623-492c-9305-95068d1a67d0" />
+<img width="1399" height="748" alt="Capture d&#39;écran 2026-09-02 200851" src="https://github.com/user-attachments/assets/72b1cf11-64fb-4838-9adf-747708ac0cdf" />
+
 
 Conception complète sous KiCad :
 
